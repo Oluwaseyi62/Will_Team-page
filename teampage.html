@@ -6,32 +6,71 @@
   <title>Team Page</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 -sans">
+<body class="bg-gray-50">
   <header class="bg-white shadow p-4">
     <div class="container mx-auto flex justify-between items-center">
       <div class="text-xl font-bold">Willmaestrolt</div>
-      <nav class="space-x-6">
+      <!-- Hamburger Menu Icon -->
+      <div class="sm:hidden">
+        <button id="menuToggle" class="text-gray-600 hover:text-black focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+      <!-- Navigation for larger screens -->
+      <nav class="hidden sm:flex space-x-6">
         <a href="https://willmaestro-revamp.netlify.app/#" class="text-gray-600 hover:text-black">Home</a>
         <a href="https://willmaestro-revamp.netlify.app/about#" class="text-gray-600 hover:text-black">About</a>
         <a href="https://willmaestro-revamp.netlify.app/blogs" class="text-gray-600 hover:text-black">Blogs</a>
-
+        <a href="https://willmaestro-revamp.netlify.app/contacts#">
+          <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50">
+            Free Consultation
+          </button>
+        </a>
       </nav>
-      <div class="space-x-4">
-       
-        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg  hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50">Free Consultation</button>
-      </div>
- 
+    </div>
   </header>
+
+  <!-- Side Navigation Bar -->
+  <div id="sideNav" class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 sm:hidden z-50">
+    <div class="p-4">
+      <button id="closeNav" class="text-gray-600 hover:text-black focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col space-y-4 px-4">
+      <a href="https://willmaestro-revamp.netlify.app/#" class="text-gray-600 hover:text-black">Home</a>
+      <a href="https://willmaestro-revamp.netlify.app/about#" class="text-gray-600 hover:text-black">About</a>
+      <a href="https://willmaestro-revamp.netlify.app/blogs" class="text-gray-600 hover:text-black">Blogs</a>
+      <a href="https://willmaestro-revamp.netlify.app/contacts#">
+        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50">
+          Free Consultation
+        </button>
+      </a>
+    </nav>
+  </div>
 
   <main class="container mx-auto text-center py-16">
     <h1 class="text-3xl font-bold mb-4">We are the people who make up Willmaestro</h1>
     <div class="mb-8">
-      <button class="bg-blue-600 text-white px-6 py-2 rounded-lg mr-4 bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 active::ring-purple-600 focus:ring-opacity-50 ">Free Consultation</button>
-     
+      <a href="https://willmaestro-revamp.netlify.app/contacts#">
+        <button class="bg-blue-600 text-white px-6 py-2 rounded-lg mr-4 bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 active::ring-purple-600 focus:ring-opacity-50">
+          Free Consultation
+        </button>
+      </a>
     </div>
+  </main>
 
     <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <!-- Team Member Card -->
