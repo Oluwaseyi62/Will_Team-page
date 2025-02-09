@@ -32,10 +32,19 @@ document.querySelectorAll('.bg-white.p-4').forEach((card) => {
     nav.classList.toggle('flex');
   });
   
-  // Insert toggle button for small screens
-  const header = document.querySelector('header .container');
-  header.insertBefore(toggleButton, header.children[1]);
   
-  // Hide nav by default on smaller screens
-  nav.classList.add('hidden', 'flex-col', 'lg:flex', 'lg:flex-row');
   
+
+  
+  // Toggle side navigation
+  const menuToggle = document.getElementById('menuToggle');
+  const sideNav = document.getElementById('sideNav');
+  const closeNav = document.getElementById('closeNav');
+
+  menuToggle.addEventListener('click', () => {
+    sideNav.classList.remove('-translate-x-full');
+  });
+
+  closeNav.addEventListener('click', () => {
+    sideNav.classList.add('-translate-x-full');
+  });
